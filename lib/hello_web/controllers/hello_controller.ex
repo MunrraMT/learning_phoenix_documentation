@@ -4,4 +4,8 @@ defmodule HelloWeb.HelloController do
   def index(conn, _params) do
     render(conn, :index)
   end
+
+  def show(conn, %{"messenger" => _messenger} = params) do
+    render(conn, :index)
+  end
 end
