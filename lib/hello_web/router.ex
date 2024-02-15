@@ -29,6 +29,12 @@ defmodule HelloWeb.Router do
     end
   end
 
+  scope "/admin", HelloWeb.Admin do
+    pipe_through :browser
+
+    resources "/reviews", ReviewController
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", HelloWeb do
   #   pipe_through :api
