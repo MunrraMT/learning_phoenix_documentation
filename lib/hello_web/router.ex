@@ -1,5 +1,6 @@
 defmodule HelloWeb.Router do
   use HelloWeb, :router
+  alias HelloWeb.Plugs
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -8,6 +9,8 @@ defmodule HelloWeb.Router do
     plug :put_root_layout, html: {HelloWeb.Layouts, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+
+    plug Plugs.Locale, "en"
   end
 
   pipeline :api do
