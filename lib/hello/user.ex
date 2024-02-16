@@ -15,6 +15,8 @@ defmodule Hello.User do
   def changeset(user, attrs) do
     user
     |> cast(attrs, [:name, :email, :bio, :number_of_pets])
-    |> validate_required([:name, :email, :bio, :number_of_pets])
+    |> validate_required([:name, :email, :bio])
+    |> validate_length(:bio, min: 2, max: 14)
+    |> validate_format(:email, ~r/@/)
   end
 end
