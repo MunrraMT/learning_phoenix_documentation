@@ -18,4 +18,24 @@
       </tr>
       <% end %>
   </table>
+
+  <br>
+
+  <%= "<b>Bold?</b>" %>
+
+    <br>
+
+    <div title="My div" class={@class}>
+      <p {@many_attributes}>
+        Hello <%= @username %>
+      </p>
+    </div>
+
+    <br>
+
+    <ul>
+      <li :for={item <- @items}>
+        <%= item %>
+      </li>
+    </ul>
 </section>

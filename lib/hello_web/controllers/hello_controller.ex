@@ -15,6 +15,12 @@ defmodule HelloWeb.HelloController do
     # |> assign(:receive, "Maria")
     # |> render(:show)
 
-    render(conn, :show, messenger: messenger, receiver: "Dweezil")
+    render(conn, :show,
+      messenger: messenger,
+      username: "Dweezil",
+      class: false,
+      many_attributes: [title: "test", "aria-label": "assim?"],
+      items: ~w"teste1 teste2"
+    )
   end
 end
