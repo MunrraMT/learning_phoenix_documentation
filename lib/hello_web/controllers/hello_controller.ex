@@ -2,7 +2,15 @@ defmodule HelloWeb.HelloController do
   use HelloWeb, :controller
 
   def index(conn, _params) do
-    render(conn, :index)
+    # render(conn, :index)
+
+    # conn
+    # |> put_root_layout(html: false)
+    # |> render(:index)
+
+    conn
+    |> put_layout(html: :admin)
+    |> render(:index)
   end
 
   def show(conn, %{"messenger" => messenger} = _params) do
