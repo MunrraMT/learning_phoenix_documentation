@@ -8,8 +8,12 @@ defmodule HelloWeb.PageController do
     # so skip the default app layout.
     # render(conn, :home, layout: false)
 
+    # conn
+    # |> put_resp_content_type("text/plain")
+    # |> send_resp(201, "")
+
     conn
-    |> put_resp_content_type("text/plain")
-    |> send_resp(201, "")
+    |> put_status(202)
+    |> render(:home, layout: false)
   end
 end
