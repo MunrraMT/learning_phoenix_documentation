@@ -1,9 +1,12 @@
 defmodule Hello.ShoppingCart.Cart do
   use Ecto.Schema
   import Ecto.Changeset
+  alias Hello.ShoppingCart.CartItem
 
   schema "carts" do
     field :user_uuid, Ecto.UUID
+
+    has_many :items, CartItem
 
     timestamps(type: :utc_datetime)
   end
