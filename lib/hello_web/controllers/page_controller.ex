@@ -6,7 +6,7 @@ defmodule HelloWeb.PageController do
   def index(conn, _params) do
     # The home page is often custom made,
     # so skip the default app layout.
-    # render(conn, :home, layout: false)
+    render(conn, :home, layout: false)
 
     # conn
     # |> put_resp_content_type("text/plain")
@@ -18,9 +18,9 @@ defmodule HelloWeb.PageController do
 
     # redirect(conn, to: ~p"/redirect_test")
 
-    conn
-    |> put_flash(:error, "Let's pretend we have an error.")
-    |> redirect(to: ~p"/redirect_test")
+    # conn
+    # |> put_flash(:error, "Let's pretend we have an error.")
+    # |> redirect(to: ~p"/redirect_test")
   end
 
   def redirect_test(conn, _params) do
