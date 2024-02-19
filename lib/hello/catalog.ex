@@ -103,10 +103,7 @@ defmodule Hello.Catalog do
 
   """
   def change_product(%Product{} = product, attrs \\ %{}) do
-    categories =
-      attrs
-      |> Map.get(:category_ids)
-      |> list_categories_by_id()
+    categories = list_categories_by_id(attrs["category_ids"])
 
     product
     |> Repo.preload(:categories)
