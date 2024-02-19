@@ -36,6 +36,11 @@ defmodule HelloWeb.Router do
   #   pipe_through :api
   # end
 
+  scope "/api", HelloWeb do
+    pipe_through :api
+    resources "/urls", UrlController, except: [:new, :edit]
+  end
+
   defp fetch_current_user(conn, _opts) do
     if(user_uuid = get_session(conn, :current_uuid)) do
       conn
