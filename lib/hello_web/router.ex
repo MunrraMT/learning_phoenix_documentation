@@ -27,6 +27,8 @@ defmodule HelloWeb.Router do
 
     get "/cart", CartController, :index
     put "/cart", CartController, :update
+
+    resources "/orders", OrderController, only: [:create, :show]
   end
 
   # Other scopes may use custom stacks.
